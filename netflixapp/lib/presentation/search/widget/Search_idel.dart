@@ -1,7 +1,10 @@
 
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:netflixapp/core/colors/colors.dart';
 import 'package:netflixapp/core/constents.dart';
+import 'package:netflixapp/presentation/search/widget/titile.dart';
 const   imageUrl='https://www.themoviedb.org/t/p/w533_and_h300_bestv2/mfPfFVhpnGp8bG4IUoBJPUs2xKj.jpg';
 
 class SearchIdle extends StatelessWidget {
@@ -13,19 +16,21 @@ class SearchIdle extends StatelessWidget {
     return Column(
        crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-      const     Text('Top Searches',style: TextStyle(fontSize: 23,
-        fontWeight:FontWeight.bold ),
-        ),
+      SearchTextTitile(titile: 'Top Searches'),
         kHeight,
-        ListView.separated(
-          shrinkWrap: true,
-          itemBuilder: (ctx,index)=>const TopSearchItem(), 
-        separatorBuilder: (ctx,index) =>kHeight,
-        itemCount:10 )
+        Expanded(
+          child: ListView.separated(
+            shrinkWrap: true,
+            itemBuilder: (ctx,index)=>const TopSearchItem(), 
+          separatorBuilder: (ctx,index) =>kHeight,
+          itemCount:10 ),
+        )
     ],
     );
   }
 }
+
+
 
 class TopSearchItem extends StatelessWidget {
   const TopSearchItem({super.key});
@@ -34,14 +39,32 @@ class TopSearchItem extends StatelessWidget {
   Widget build(BuildContext context) {
 final screenwidth=MediaQuery.of(context).size.width;
     return Row(children: [
+      
      Container(
-    //  width: screenwidth=0.3,
-      decoration: BoxDecoration(image: DecorationImage(
+     width: screenwidth*0.36,
+     height: 60,
+      decoration:const  BoxDecoration(image: DecorationImage(
         fit: BoxFit.cover,
         image: NetworkImage(imageUrl))
         
       ),
-     )
+     ),
+     kwidth,
+  const    Expanded(child: Text('Movie Name', style: TextStyle(
+      color: kwhitcolor,
+      fontWeight: FontWeight.bold,
+      fontSize: 16),
+      
+      ),
+      ),
+    const   CircleAvatar(backgroundColor:kwhitcolor,
+      radius: 25,
+      child: CircleAvatar(backgroundColor: kblackcolor,
+      radius: 23,
+      child: Icon(Icons.play_arrow),),
+      
+      )
+      
     ],);
   }
 }

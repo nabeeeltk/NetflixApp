@@ -1,35 +1,38 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:netflixapp/core/colors/colors.dart';
 import 'package:netflixapp/core/constents.dart';
 import 'package:netflixapp/presentation/search/widget/Search_idel.dart';
-
+import 'package:netflixapp/presentation/search/widget/Search_result.dart';
 
 class ScreenSearch extends StatelessWidget {
   const ScreenSearch({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(body: SafeArea(
-      child: Column(
+    return Scaffold(
+      body: SafeArea(
+          child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children:  [
+        children: [
           CupertinoSearchTextField(
-           backgroundColor: Colors.grey.withOpacity(0.3),
-          prefixIcon: const Icon(
-                  CupertinoIcons.search,
-                  color: Colors.grey,
-                ),
-                suffixIcon: const Icon(
-                  CupertinoIcons.xmark_circle_fill,
-                  color: Colors.white,
-                ),
-                style: TextStyle(color: Colors.grey),
+            backgroundColor: Colors.grey.withOpacity(0.3),
+            prefixIcon: const Icon(
+              Icons.search,
+              color: Colors.grey,
+            ),
+            suffixIcon: const Icon(
+             Icons.clear,
+              color: Colors.white,
+            ),
+            style: TextStyle(color: Colors.grey),
           ),
           kHeight,
-        SearchIdle(),
-        kHeight,
+          // Expanded(child: SearchIdle()),
+           Expanded(child: SearchResult()),
+          kHeight,
         ],
-      )
-      ),);
+      )),
+    );
   }
 }
