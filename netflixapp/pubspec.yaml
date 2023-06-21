@@ -33,6 +33,7 @@ dependencies:
   google_fonts: ^4.0.4
   dependencies:
   video_player: ^2.6.1
+  bordered_text: 2.0.0
   
 google_fonts: 
 
