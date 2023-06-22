@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:netflixapp/core/constents.dart';
+import 'package:netflixapp/presentation/widget/video_widget.dart';
 
+import '../home/costum_button_widget.dart';
 import 'widgets/coming_soon_widget.dart';
+import 'widgets/evary_one_watching_widget.dart';
 
 class ScreenNewAndHot extends StatelessWidget {
   const ScreenNewAndHot({super.key});
@@ -47,23 +51,29 @@ class ScreenNewAndHot extends StatelessWidget {
             ),
           ),
         ),
-      
         body: TabBarView(
-          children: [_BuildComingSoon(), 
-          // _BuildEveryOnesWatching(),
+          children: [
+            _BuildComingSoon(),
+            _BuildEveryOnesWatching(),
           ],
         ),
       ),
     );
   }
-  
 
   Widget _BuildComingSoon() {
     return ListView.builder(
       itemCount: 15,
-      itemBuilder: (BuildContext context, index)
-     => const  ComingSoonWidget(),
-     );
+      itemBuilder: (BuildContext context, index) => const ComingSoonWidget(),
+    );
+  }
+
+  Widget _BuildEveryOnesWatching() {
+    return ListView.builder(
+      itemCount: 15,
+      itemBuilder:(BuildContext context, index) => 
+   const  EveryOneWatchingWidget()
+    );
   }
 }
 

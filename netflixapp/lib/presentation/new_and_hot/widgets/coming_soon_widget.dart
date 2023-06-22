@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/constents.dart';
 import '../../home/costum_button_widget.dart';
+import '../../widget/video_widget.dart';
 
 class ComingSoonWidget extends StatelessWidget {
   const ComingSoonWidget({
@@ -43,33 +44,7 @@ class ComingSoonWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Stack(
-                children: [
-                  SizedBox(
-                    width: double.infinity,
-                    height: 200,
-                    child: Image.network(
-                      'https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/nf3Vlxm3C9U1aKUUQHmKFZmxPSc.jpg',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  Positioned(
-                    right: 10,
-                    bottom: 0,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.black12,
-                      radius: 25,
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.volume_off,
-                          size: 30,
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
+           const    VideoWidget(),
               kHeight,
               Row(
                 children: [
@@ -119,6 +94,3 @@ class ComingSoonWidget extends StatelessWidget {
   }
 }
 
-_BuildEveryOnesWatching() {
-  return const  SizedBox();
-}
