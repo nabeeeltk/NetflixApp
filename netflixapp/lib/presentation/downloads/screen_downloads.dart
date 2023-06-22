@@ -10,7 +10,7 @@ class ScreenDownlads extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _widget = [const _SmartDownloads(), Section2(), const Section3()];
+    final    _widget = [const _SmartDownloads(), Section2(), const Section3()];
 
     return Scaffold(
         appBar: const PreferredSize(
@@ -28,7 +28,7 @@ class ScreenDownlads extends StatelessWidget {
 
 class Section2 extends StatelessWidget {
   Section2({super.key});
-  final List Imagelist = [
+  final List imagelist = [
     'https://www.themoviedb.org/t/p/w220_and_h330_face/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg',
     'https://www.themoviedb.org/t/p/w220_and_h330_face/pwf3DGuWB1AptvIzHhlGxDUNnQX.jpg',
     'https://www.themoviedb.org/t/p/w220_and_h330_face/kVG8zFFYrpyYLoHChuEeOGAd6Ru.jpg'
@@ -61,20 +61,20 @@ class Section2 extends StatelessWidget {
               radius: size.width * 0.4,
             ),
             DownloadImageWidget(
-              Imagelist: Imagelist[0],
+              imagelist: imagelist[0],
               margin: const EdgeInsets.only(left: 165, bottom: 50),
               size: Size(size.width * 0.4, size.width * 0.58),
               angle: 20,
             ),
             DownloadImageWidget(
-              Imagelist: Imagelist[1],
+              imagelist: imagelist[1],
               margin: const EdgeInsets.only(right: 165, bottom: 50),
               size: Size(size.width * 0.4, size.width * 0.58),
               angle: -20,
             ),
             DownloadImageWidget(
               radius: 15,
-              Imagelist: Imagelist[2],
+              imagelist: imagelist[2],
               margin: const EdgeInsets.only(bottom: 10),
               size: Size(size.width * 0.5, size.width * 0.67),
             ),
@@ -111,7 +111,7 @@ class Section3 extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
+      const   SizedBox(
           height: 3,
         ),
         MaterialButton(
@@ -157,13 +157,13 @@ class DownloadImageWidget extends StatelessWidget {
   const DownloadImageWidget({
     super.key,
     this.angle = 0,
-    required this.Imagelist,
+    required this.imagelist,
     required this.margin,
     required this.size,
     this.radius = 10,
   });
   final double angle;
-  final String Imagelist;
+  final String imagelist;
   final EdgeInsets margin;
   final Size size;
   final double radius;
@@ -180,7 +180,7 @@ class DownloadImageWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(radius),
           color: Colors.amber,
           image: DecorationImage(
-              image: NetworkImage(Imagelist), fit: BoxFit.cover),
+              image: NetworkImage(imagelist), fit: BoxFit.cover),
         ),
       ),
     );

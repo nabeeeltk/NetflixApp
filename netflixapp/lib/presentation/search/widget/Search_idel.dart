@@ -1,6 +1,3 @@
-
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:netflixapp/core/colors/colors.dart';
 import 'package:netflixapp/core/constents.dart';
@@ -8,7 +5,7 @@ import 'package:netflixapp/presentation/search/widget/titile.dart';
 const   imageUrl='https://www.themoviedb.org/t/p/w533_and_h300_bestv2/mfPfFVhpnGp8bG4IUoBJPUs2xKj.jpg';
 
 class SearchIdle extends StatelessWidget {
-   SearchIdle({super.key});
+ const   SearchIdle({super.key});
   
 
   @override
@@ -16,7 +13,7 @@ class SearchIdle extends StatelessWidget {
     return Column(
        crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-      SearchTextTitile(titile: 'Top Searches'),
+    const   SearchTextTitile(titile: 'Top Searches'),
         kHeight,
         Expanded(
           child: ListView.separated(

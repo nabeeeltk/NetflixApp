@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:netflixapp/core/constents.dart';
 import 'package:netflixapp/presentation/search/widget/titile.dart';
 
-final imageurl ='https://www.themoviedb.org/t/p/w220_and_h330_face/hQUT2B0QVV17pYMHyLzdNGVdrBF.jpg';
+const imageurl ='https://www.themoviedb.org/t/p/w220_and_h330_face/hQUT2B0QVV17pYMHyLzdNGVdrBF.jpg';
 class SearchResult extends StatelessWidget {
   const SearchResult({super.key});
 
@@ -35,7 +35,7 @@ class MainCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        image: DecorationImage(
+        image:const  DecorationImage(
           image: NetworkImage(imageurl),fit: BoxFit.cover),
           borderRadius: BorderRadius.circular(7)),
     );

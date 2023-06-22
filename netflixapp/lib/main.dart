@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflixapp/core/colors/colors.dart';
-import 'package:netflixapp/presentation/home/screen_home.dart';
 import 'package:netflixapp/presentation/main_page/screen_main_page.dart';
 
 void main() {
@@ -17,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        appBarTheme:const  AppBarTheme(backgroundColor: Colors.transparent),
         scaffoldBackgroundColor: BackgroundColor,
         primarySwatch: Colors.blue,
         fontFamily: GoogleFonts.montserrat().fontFamily,

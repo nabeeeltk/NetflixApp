@@ -1,8 +1,6 @@
 import 'package:bordered_text/bordered_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
 
 class NumberCardWidget extends StatelessWidget {
   final int index;
@@ -14,7 +12,7 @@ class NumberCardWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-            SizedBox(
+         const    SizedBox(
               height: 150,width: 40,
             ),
             Container(
