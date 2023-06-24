@@ -15,10 +15,9 @@ class EveryOneWatchingWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         kHeight,
-        
         const Text(
           'Friends',
-          style: TextStyle(fontSize:20 , fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         kHeight,
         const Text(
@@ -26,12 +25,13 @@ class EveryOneWatchingWidget extends StatelessWidget {
           style: TextStyle(
               color: Colors.grey, fontSize: 16, fontWeight: FontWeight.bold),
         ),
-        const SizedBox(height: 30,),
+        const SizedBox(
+          height: 30,
+        ),
         const VideoWidget(),
         kHeight,
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
-          
           children: const [
             CostumButton(
               icon: Icons.share,
