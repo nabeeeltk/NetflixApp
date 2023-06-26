@@ -1,1 +1,1 @@
-const kbaseUrl='https://api.themoviedb.org/3';
+const kbaseUrl='https://image.tmdb.org/t/p/w500';

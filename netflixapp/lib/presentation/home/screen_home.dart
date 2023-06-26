@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:netflixapp/core/colors/colors.dart';
+
 import 'package:netflixapp/core/constents.dart';
-import 'package:netflixapp/presentation/home/costum_button_widget.dart';
+import 'package:netflixapp/presentation/widget/main_titile.dart';
+
+
+import '../../domain/api_end_points.dart';
 import '../widget/main_titile_card.dart';
 import 'backgroun_card_widget.dart';
 import 'number_titile_card.dart';
@@ -33,20 +36,37 @@ class ScreenHome extends StatelessWidget {
               child: Stack(
                 children: [
                   ListView(
-                    children: const [
-                      BackgroundCardWIdget(),
-                      //romove column;
-                      MainTitileCard(
-                        titleCard: 'Realeaased in the past year',
-                      ),
-                      kHeight,
-                      MainTitileCard(titleCard: 'Treding Now'),
-                      kHeight,
-                      NumberTitileCard(),
-                      kHeight,
-                      MainTitileCard(titleCard: 'Tens Dream'),
-                      kHeight,
-                      MainTitileCard(titleCard: 'South Indian Cinema'),
+                    children: const  [
+                      BackgroundWidget(),
+                   MainTitleCard(
+                      title: 'New Releases',
+                      apiUrl: ApiEndPoints.trendingall,
+                    ),
+                    MainTitleCard(
+                      title: 'Trending Now',
+                      apiUrl: ApiEndPoints.moviepopular,
+                    ),
+                    NumberTitileCard(),
+                    MainTitleCard(
+                      title: 'Popular Shows ',
+                      apiUrl: ApiEndPoints.tvpopular,
+                    ),
+                    MainTitleCard(
+                      title: 'Upcoming',
+                      apiUrl: ApiEndPoints.upcoming,
+                    ),
+                     
+                      // MainTitile(
+                      //   titleCard: 'Realeaased in the past year', apiUrl: '',
+                      // ),
+                      // kHeight,
+                      // MainTitileCard(titleCard: 'Treding Now', apiUrl:'',),
+                      // kHeight,
+                      // NumberTitileCard(),
+                      // kHeight,
+                      // MainTitileCard(titleCard: 'Tens Dream', apiUrl: '',),
+                      // kHeight,
+                      // MainTitileCard(titleCard: 'South Indian Cinema', apiUrl: '',),
                     ],
                   ),
                   scrollnotifier.value == true
@@ -112,27 +132,3 @@ class ScreenHome extends StatelessWidget {
     ));
   }
 }
-
-//   TextButton _PlayButton() {
-//     return TextButton.icon(
-//       onPressed: () {},
-//       icon: const Icon(
-//         Icons.play_arrow,
-//         color: Colors.black,
-//         size: 30,
-//       ),
-//       label: const Padding(
-//         padding: EdgeInsets.symmetric(
-//           horizontal: 8,
-//         ),
-//         child: Text(
-//           'Play',
-//           style: TextStyle(color: Colors.black, fontSize: 20),
-//         ),
-//       ),
-//       style: const ButtonStyle(
-//           backgroundColor: MaterialStatePropertyAll(kwhitcolor)),
-//     );
-//   }
-// }
-//}

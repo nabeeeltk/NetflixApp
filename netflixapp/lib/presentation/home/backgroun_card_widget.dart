@@ -4,11 +4,36 @@ import 'package:flutter/material.dart';
 import 'package:netflixapp/core/constents.dart';
 
 import '../../core/colors/colors.dart';
+import '../../domain/api_end_points.dart';
+import '../../domain/base_claint.dart';
+import '../../infrastrucutre/api_key.dart';
+import '../../model/movie_info.dart';
 import 'costum_button_widget.dart';
+class BackgroundWidget extends StatefulWidget {
+  const BackgroundWidget({super.key});
 
-class BackgroundCardWIdget extends StatelessWidget {
-  const BackgroundCardWIdget({super.key});
+  @override
+  State<BackgroundWidget> createState() => _BackgroundWidgetState();
+}
 
+class _BackgroundWidgetState extends State<BackgroundWidget> {
+  @override
+  void initState() {
+    super.initState();
+    setimage();
+  }
+
+  setimage() async {
+    dynamic result = await apicall(ApiEndPoints.moviepopular);
+    setState(() {
+      if (result.results.isNotEmpty) {
+        MovieInfoModel movieInfo = result.results[2];
+        imageUrl =
+            "https://image.tmdb.org/t/p/w500${movieInfo.posterPath}?api_key=$apiKey";
+      }
+    });
+  }
+  String? imageUrl;
   @override
   Widget build(BuildContext context) {
     return  Stack(
@@ -17,8 +42,8 @@ class BackgroundCardWIdget extends StatelessWidget {
                     width: double.infinity,
                     height: 600,
               
-                    decoration:const  BoxDecoration(
-                      image: DecorationImage(image: NetworkImage(kmainimage),
+                    decoration:  BoxDecoration(
+                      image: DecorationImage(image: NetworkImage('$imageUrl'),
                       fit: BoxFit.cover
                       )
                     ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:netflixapp/core/colors/colors.dart';
 import 'package:netflixapp/core/constents.dart';
 import 'package:netflixapp/presentation/search/widget/titile.dart';
+
+import 'Search_result.dart';
 const   imageUrl='https://www.themoviedb.org/t/p/w533_and_h300_bestv2/mfPfFVhpnGp8bG4IUoBJPUs2xKj.jpg';
 
 class SearchIdle extends StatelessWidget {
@@ -40,9 +42,9 @@ final screenwidth=MediaQuery.of(context).size.width;
      Container(
      width: screenwidth*0.36,
      height: 60,
-      decoration:const  BoxDecoration(image: DecorationImage(
+      decoration: BoxDecoration(image: DecorationImage(
         fit: BoxFit.cover,
-        image: NetworkImage(imageUrl))
+        image: NetworkImage('$imageurl'))
         
       ),
      ),

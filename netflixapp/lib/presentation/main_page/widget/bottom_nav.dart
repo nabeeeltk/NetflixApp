@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 
 ValueNotifier<int> indexchangenotifier=ValueNotifier(0);
@@ -12,6 +13,7 @@ class BottomNavigationWidget extends StatelessWidget {
       currentIndex: newindex,
       onTap:(index){
         indexchangenotifier.value=index;
+      
       },
       elevation: 0,
       type: BottomNavigationBarType.fixed,
